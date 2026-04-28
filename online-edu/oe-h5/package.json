@@ -1,0 +1,57 @@
+{
+    "id": "online-edu-h5",
+    "name": "在线教育",
+    "displayName": "在线教育",
+    "version": "1.0.0",
+    "description": "",
+    "keywords": [],
+
+	"uni-app": {
+		"scripts": {
+			"dev": {
+				"title": "开发环境",
+				"env": {
+					"UNI_PLATFORM": "h5",
+					"NAME": "dev"
+				},
+				"define": {
+					"H5-WEIXIN": true
+				}
+			},
+			"test": {
+				"title": "测试环境",
+				"env": {
+					"UNI_PLATFORM": "h5",
+					"NAME": "test"
+				},
+				"define": {
+					"H5-WEIXIN": true
+				}
+			},
+			"test2": {
+				"title": "小程序测试环境",
+				"env": {
+					"UNI_PLATFORM": "mp-weixin",
+					"NAME": "test2"
+				},
+				"define": {
+					
+				}
+			},
+			"prod": {
+				"title": "生产环境",
+				"env": {
+					"UNI_PLATFORM": "h5",
+					"NAME": "prod"
+				},
+				"define": {
+					"H5-WEIXIN": true
+				}
+			}
+		}
+	},
+	"dependencies": {
+		"@dcloudio/uni-ui": "^1.5.6",
+		"lodash": "^4.17.21"
+	}
+}

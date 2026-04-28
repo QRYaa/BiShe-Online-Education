@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<contextName>logback-spring</contextName>
+	<property name="pattern"
+		value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg %n" />
+	<property name="SERVICE" value="online" />
+	<property name="LOG_HOME" value="./logs" />
+
+	<!-- 控制台输出 -->
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>${pattern}</pattern>
+		</encoder>
+	</appender>
+
+	<!-- 文件输出 -->
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/${SERVICE}.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- 每天生成一个新的日志文件，并按大小分割 -->
+			<fileNamePattern>${LOG_HOME}/%d{yyyy-MM-dd}.%i.${SERVICE}.log.gz</fileNamePattern>
+			<maxFileSize>200MB</maxFileSize>
+			<maxHistory>60</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${pattern}</pattern>
+		</encoder>
+	</appender>
+
+	<springProfile name="dev,dzc">
+		<logger name="cn.tgxy" level="DEBUG" additivity="false">
+			<appender-ref ref="CONSOLE" />
+		</logger>
+		<root level="ERROR">
+			<appender-ref ref="CONSOLE" />
+		</root>
+	</springProfile>
+
+	<springProfile name="test,prod">
+		<root level="INFO">
+			<appender-ref ref="FILE" />
+			<appender-ref ref="CONSOLE" />
+		</root>
+	</springProfile>
+</configuration>

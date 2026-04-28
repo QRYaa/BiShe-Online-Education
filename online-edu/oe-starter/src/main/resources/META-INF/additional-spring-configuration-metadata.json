@@ -1,0 +1,92 @@
+{"properties": [
+  {
+    "name": "system.base.file-root",
+    "type": "java.lang.String",
+    "description": "A description for 'system.base.file-root'"
+  },
+  {
+    "name": "system.base.captchaEnabled",
+    "type": "java.lang.String",
+    "description": "A description for 'system.base.captchaEnabled'"
+  },
+  {
+    "name": "system.edu.student-code-pre",
+    "type": "java.lang.String",
+    "description": "A description for 'system.edu.student-code-pre'"
+  },
+  {
+    "name": "wx.cp.msgaudit.proxy",
+    "type": "java.lang.String",
+    "description": "A description for 'wx.cp.msgaudit.proxy'"
+  },
+  {
+    "name": "system.base.mainSystem",
+    "type": "java.lang.String",
+    "description": "A description for 'system.base.mainSystem'"
+  },
+  {
+    "name": "system.sso.app-code",
+    "type": "java.lang.String",
+    "description": "A description for 'system.sso.app-code'"
+  },
+  {
+    "name": "system.sso.appSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'system.sso.appSecret'"
+  },
+  {
+    "name": "system.sso.url",
+    "type": "java.lang.String",
+    "description": "A description for 'system.sso.url'"
+  },
+  {
+    "name": "system.sso.logoutUrl",
+    "type": "java.lang.String",
+    "description": "A description for 'system.sso.logoutUrl'"
+  },
+  {
+    "name": "ckeditorImgPre",
+    "type": "java.lang.String",
+    "description": "A description for 'ckeditorImgPre'"
+  },
+  {
+    "name": "system.base.aliCdn.privateKey",
+    "type": "java.lang.String",
+    "description": "A description for 'system.base.aliCdn.privatekey'"
+  },
+  {
+    "name": "system.base.aliOss.enable",
+    "type": "java.lang.String",
+    "description": "A description for 'system.base.aliOss.enable'"
+  },
+  {
+    "name": "system.base.aliOss.videoBucketDomainName",
+    "type": "java.lang.String",
+    "description": "A description for 'system.base.aliOss.videoBucketDomainName'"
+  },
+  {
+    "name": "system.base.aliOss.accessKeyId",
+    "type": "java.lang.String",
+    "description": "A description for 'system.base.aliOss.accessKeyId'"
+  },
+  {
+    "name": "system.base.aliOss.accessKeySecret",
+    "type": "java.lang.String",
+    "description": "A description for 'system.base.aliOss.accessKeySecret'"
+  },
+  {
+    "name": "uniappEditorImgPre",
+    "type": "java.lang.String",
+    "description": "A description for 'uniappEditorImgPre'"
+  },
+  {
+    "name": "system.base.aliOss.endpoint",
+    "type": "java.lang.String",
+    "description": "A description for 'system.base.aliOss.endpoint'"
+  },
+  {
+    "name": "system.base.aliOss.region",
+    "type": "java.lang.String",
+    "description": "A description for 'system.base.aliOss.region'"
+  }
+]}

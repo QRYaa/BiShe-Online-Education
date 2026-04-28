@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>cn.tgxy</groupId>
+	<artifactId>tgbase-system</artifactId>
+	<version>2.0.0</version>
+	<properties>
+		<java.version>17</java.version>
+		<spring.boot.version>3.3.4</spring.boot.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>cn.tgxy</groupId>
+			<artifactId>tgbase-core</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- 配置当前项目的jdk版本信息 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.11.0</version>
+				<configuration>
+					<parameters>true</parameters>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring.boot.version}</version>
+			</plugin>
+			<!-- 添加maven-source-plugin插件配置 -->
+			 <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> 
+		</plugins>
+	</build>
+	
+	<distributionManagement>
+		<repository>
+			<!--必须与 settings.xml 的 id 一致-->
+			<id>g-dkfa7138-tgxy-maven</id>
+			<name>maven</name>
+			<url>https://g-dkfa7138-maven.pkg.coding.net/repository/tgxy/maven/</url>
+		</repository>
+	</distributionManagement>
+</project>

@@ -1,0 +1,23 @@
+{
+  "id": "4921738",
+  "name": "oe-h5",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2597950",
+      "name": "idea",
+      "font_class": "idea",
+      "unicode": "eb01",
+      "unicode_decimal": 60161
+    },
+    {
+      "icon_id": "2352795",
+      "name": "learn",
+      "font_class": "learn",
+      "unicode": "eb00",
+      "unicode_decimal": 60160
+    }
+  ]
+}

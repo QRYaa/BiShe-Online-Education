@@ -1,0 +1,63 @@
+package cn.tgxy.tgbase.constant;
+
+public interface BsCoreErrorConstant {
+
+	// 用户管理  20
+	int USER_STATUS_INVAL = 200101; // 用户被禁用
+	int USER_NOT_EXISTS = 200102; // 用户不存在
+	int USER_PASSWORD_ERROR = 200103; // 用户密码错误
+	int USER_LOGIN_ERROR = 200104; // 用户登录错误
+	int PASSWORD_EMPTY = 200105; //密码不能为空
+	int USER_CAPTCHA_WRONG = 200106; // 验证码错误
+	int USERNAME_EXIST = 200201; //用户名已存在
+	int JOBNUM_EXIST = 200202; // 工号已存在
+	int MOBILE_EXIST=200203;//手机号已存在
+	int EMAIL_EXIST=200204;//邮箱已存在
+	int SSO_TICKET_INVALID = 203001; // SSO, Ticket无效
+	int MOBILE_FORMAT_ERROR=200401;//手机号格式错误
+	int EMAIL_FORMAT_ERROR=200402;//邮箱格式错误
+	int TOKEN_ERROR=200501;//token值不正确
+
+	// 权限 21
+	int PERMISSION_DENIED_ERROR = 210101; // 没有权限
+	int PERMISSION_UPDATE_ERROR = 210102; // 权限更新错误
+	int PERMISSION_HAS_CHILDREN = 210103; // 存在下级权限，需要先删除下级权限
+	int PERMISSION_CODE_EXIST = 210104; // 权限编码已存在
+	
+	// 角色 22
+	int ROLE_CODE_EXIST = 220104; // 角色编码已存在
+
+	// 字典管理 30
+	int DICTIONARY_CODE_EXIST = 300101; // 数据字典编码重复
+	int DICTIONARY_ITEM_CODE_EXIST = 300102;// 数据字典值编码重复
+
+	// 部门 31
+	int DEPARTMENT_CODE_EXIST = 310101;
+	int DEPARTMENT_UPDATE_ERROR = 310102;
+	int DEPARTMENT_HAS_CHILDRENT = 310103;
+	int DEPARTMENT_HAS_USER=310104;
+	
+	// 设置 32
+	int SETTING_CODE_EXIST = 320101;
+	
+	// 客户 33
+	int CUST_CODE_EXIST = 330101;
+	int CUST_TEL_EXIST = 330102;
+	
+
+	// 班型 40
+	int PROTOTYPE_CODE_EXIST = 400101;
+	//教师50
+	int TEACHER_CODE_EXIST = 500101;
+	// 课程管理 34
+	int CLASSMODULE_CODE_EXIST = 340101;
+	
+	//任务调度
+	int PROCESSOR_NAME_ERROR=380101;
+	int PROCESSOR_NAME_EXISTS=380102;
+	int CRON_ERROR=380103;
+	//应用管理
+	int APP_CODE_EXIST = 390101;
+	//应用设置
+	int APP_SETTING_CODE_EXIST=410101;
+}

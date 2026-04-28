@@ -1,0 +1,130 @@
+server:
+  port: 28081
+  servlet:
+    context-path: /server
+    session:
+      cookie:
+        http-only: true
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  servlet:
+    multipart:
+      max-file-size: 1000MB
+      max-request-size: 1000MB
+      enabled: true
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 2
+      #    password: 123456 #默认为空
+      timeout: 3000ms
+      lettuce:
+        pool:
+          max-active: 100  # 最大连接数，负值表示没有限制，默认8
+          max-wait: -1    # 最大阻塞等待时间，负值表示没限制，默认-1
+          max-idle: 8     # 最大空闲连接，默认8
+          min-idle: 0     # 最小空闲连接，默认0
+  jpa:
+    open-in-view: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+        highlight_sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/tgonline?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF8&useSSL=true&nullCatalogMeansCurrent=true
+    username: root
+    password: password
+  quartz:
+    #相关属性配置
+    properties:
+      org:
+        quartz:
+          scheduler:
+            # 集群名，区分同一系统的不同实例，若使用集群功能，则每一个实例都要使用相同的名字
+            instanceName: clusteredScheduler
+            # 若是集群下，每个instanceId必须唯一
+            instanceId: AUTO
+            #设置为0，表示禁用
+            batchTriggerAcquisitionMaxCount: 1
+          threadPool:
+            #一般使用这个便可
+            class: org.quartz.simpl.SimpleThreadPool
+            #线程数量，不会动态增加
+            threadCount: 10
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
+    #是否等待任务执行完毕后，容器才会关闭
+    wait-for-jobs-to-complete-on-shutdown: false
+    #配置的job是否覆盖已经存在的JOB信息
+    overwrite-existing-jobs: false
+
+# springdoc-openapi项目配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'core'
+      paths-to-match: '/**'
+      packages-to-scan: cn.tgxy.oledu.controller
+#    - group: 'edu'
+#      paths-to-match: '/**'
+#      packages-to-scan: cn.tgxy.edu.controller,cn.tgxy.edu.fe.controller
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true
+  production: false
+  setting:
+    language: zh_cn
+    
+system:
+  base:
+    ssoEnable: false #是否启动sso
+    mainSystem: true #是否主系统
+    captchaEnabled: false
+    cronjobEnabled: true
+    fileRoot: D:/tmp
+    aliOss:
+      enable: false
+      accessKeyId: 
+      accessKeySecret: 
+      endpoint: 
+      region: 
+
+  edu:
+    studentCodePre: yyyyMMddHHmm
+  sso:
+    appCode: ONLINE_EDU
+    appSecret: online
+    checkTicketUrl: http://127.0.0.1:28080/server/api/checkTicket
+    logoutUrl: http://127.0.0.1:28080/server/api/logout
+
+#ckeditor图片前缀配置
+ckeditorImgPre: 'http://localhost:28081/server/ximages?path='
+#uniappEditor图片前缀配置
+uniappEditorImgPre: 'http://localhost:28081/server/ximages?path='
+ 
+###### 微信开发配置 #####
+wx:
+#公众号配置
+  mp:
+    enable: false
+    app-id: 
+    secret: 
+    use-stable-access-token: true
+  pay:
+    app-id: 
+    mch-id: 
+    mch-key: 
+    notify-url: 
+    trade-type: JSAPI
+    use-sandbox-env: true   
